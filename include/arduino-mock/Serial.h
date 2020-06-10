@@ -42,6 +42,7 @@ class SerialMock {
     MOCK_METHOD3(readBytesUntil, uint8_t(char, char*, int));
 
     MOCK_METHOD0(flush, void());
+    MOCK_METHOD0(BoolOp, bool());
 
     /* Not implemented yet
     MOCK_METHOD2(println, size_t(unsigned char, int));
@@ -92,6 +93,8 @@ class Stream {
     uint8_t readBytesUntil(char delimiter, char* buffer, int length);
 
     static void flush();
+
+    operator bool();
 
     /*
     TODO: Not implemented yet.

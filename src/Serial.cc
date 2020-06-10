@@ -225,5 +225,10 @@ uint8_t Stream::readBytesUntil(char delimiter, char* buffer, int length) {
   return gSerialMock->readBytesUntil(delimiter, buffer, length);
 }
 
+Stream::operator bool() {
+  assert (gSerialMock != NULL);
+  return gSerialMock->BoolOp();
+}
+
 // Preinstantiate Objects
 Stream Serial;
