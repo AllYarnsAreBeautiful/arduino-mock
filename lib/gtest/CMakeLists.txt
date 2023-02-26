@@ -3,8 +3,8 @@ project(gtest_builder C CXX)
 include(ExternalProject)
 
 ExternalProject_Add(gtest
-    URL https://github.com/google/googletest
-    TAG release-1.11.0
+    GIT_REPOSITORY https://github.com/google/googletest
+    GIT_TAG release-1.11.0
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/gtest
     INSTALL_COMMAND ""
 )
