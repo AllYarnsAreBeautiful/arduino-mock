@@ -84,6 +84,7 @@ class ArduinoMock {
     ArduinoMock();
 
     unsigned long getMillis() {
+      currentMillis += 1; // increment each time `millis()` is called
       return currentMillis;
     };
 
