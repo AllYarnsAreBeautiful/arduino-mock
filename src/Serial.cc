@@ -2,7 +2,7 @@
 
 #include "arduino-mock/Serial.h"
 
-static SerialMock* gSerialMock = NULL;
+static SerialMock* gSerialMock = nullptr;
 SerialMock* serialMockInstance() {
   if(!gSerialMock) {
     gSerialMock = new SerialMock();
@@ -13,7 +13,7 @@ SerialMock* serialMockInstance() {
 void releaseSerialMock() {
   if(gSerialMock) {
     delete gSerialMock;
-    gSerialMock = NULL;
+    gSerialMock = nullptr;
   }
 }
 
@@ -61,7 +61,7 @@ size_t Serial_::print(const char *s) {
     std::cout << s;
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(s);
 }
 
@@ -70,7 +70,7 @@ size_t Serial_::print(char c) {
     std::cout << c;
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(c);
 }
 
@@ -79,7 +79,7 @@ size_t Serial_::print(unsigned char c, int base) {
     printBase(c, base);
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(c, base);
 }
 
@@ -88,7 +88,7 @@ size_t Serial_::print(int num, int base) {
     printBase(num, base);
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(num, base);
 }
 
@@ -97,7 +97,7 @@ size_t Serial_::print(unsigned int num, int base) {
     printBase(num, base);
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(num, base);
 }
 
@@ -106,7 +106,7 @@ size_t Serial_::print(long num, int base) {
     printBase(num, base);
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(num, base);
 }
 
@@ -115,7 +115,7 @@ size_t Serial_::print(unsigned long num, int base) {
     printBase(num, base);
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(num, base);
 }
 
@@ -124,7 +124,7 @@ size_t Serial_::print(double num, int digits) {
     printDouble(num, digits);
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->print(num, digits);
 }
 
@@ -133,7 +133,7 @@ size_t Serial_::println(const char *s) {
     std::cout << s << std::endl;
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(s);
 }
 
@@ -142,37 +142,37 @@ size_t Serial_::println(char c) {
     std::cout << c << std::endl;
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(c);
 }
 
 size_t Serial_::println(unsigned char c, int base) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(c, base);
 }
 
 size_t Serial_::println(int num, int base) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
 size_t Serial_::println(unsigned int num, int base) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
 size_t Serial_::println(long num, int base) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
 size_t Serial_::println(unsigned long num, int base) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
 size_t Serial_::println(double num, int digits) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println(num, digits);
 }
 
@@ -181,42 +181,42 @@ size_t Serial_::println(void) {
     std::cout << std::endl;
     return 0;
   }
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->println();
 }
 
 size_t Serial_::write(uint8_t val) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->write(val);
 }
 
 size_t Serial_::write(const char *str) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->write(str);
 }
 
 size_t Serial_::write(const uint8_t *buffer, size_t size) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->write(buffer, size);
 }
 
 uint8_t Serial_::begin(uint32_t port) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->begin(port);
 }
 
 void Serial_::flush() {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->flush();
 }
 
 uint8_t Serial_::available() {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->available();
 }
 
 uint8_t Serial_::read() {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->read();
 }
 
