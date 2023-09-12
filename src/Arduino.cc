@@ -1,6 +1,6 @@
 #include "arduino-mock/Arduino.h"
 
-static ArduinoMock* arduinoMock = NULL;
+static ArduinoMock* arduinoMock = nullptr;
 ArduinoMock* arduinoMockInstance() {
   if(!arduinoMock) {
     arduinoMock = new ArduinoMock();
@@ -11,7 +11,7 @@ ArduinoMock* arduinoMockInstance() {
 void releaseArduinoMock() {
   if(arduinoMock) {
     delete arduinoMock;
-    arduinoMock = NULL;
+    arduinoMock = nullptr;
   }
 }
 
@@ -20,21 +20,21 @@ ArduinoMock::ArduinoMock() {
 }
 
 void pinMode(uint8_t a, uint8_t b) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != nullptr);
   arduinoMock->pinMode(a, b);
 }
 void digitalWrite(uint8_t a, uint8_t b) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != nullptr);
   arduinoMock->digitalWrite(a, b);
 }
 
 int digitalRead(uint8_t a) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != nullptr);
   return arduinoMock->digitalRead(a);
 }
 
 int analogRead(uint8_t a) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != nullptr);
   return arduinoMock->analogRead(a);
 }
 
@@ -43,12 +43,12 @@ void analogReference(uint8_t mode) {
 }
 
 void analogWrite(uint8_t a, int b) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != nullptr);
   arduinoMock->analogWrite(a, b);
 }
 
 unsigned long millis(void) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != nullptr);
   arduinoMock->millis();
   return arduinoMock->getMillis();
 }
@@ -57,7 +57,7 @@ unsigned long micros(void) {
   return 0;
 }
 void delay(unsigned long a) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != nullptr);
   arduinoMock->delay(a);
 }
 void delayMicroseconds(unsigned int us) {
