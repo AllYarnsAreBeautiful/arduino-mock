@@ -2,7 +2,7 @@
 
 #include "arduino-mock/Spark.h"
 
-static SparkMock* gSparkMock = NULL;
+static SparkMock* gSparkMock = nullptr;
 SparkMock* sparkMockInstance() {
   if(!gSparkMock) {
     gSparkMock = new SparkMock();
@@ -13,7 +13,7 @@ SparkMock* sparkMockInstance() {
 void releaseSparkMock() {
   if(gSparkMock) {
     delete gSparkMock;
-    gSparkMock = NULL;
+    gSparkMock = nullptr;
   }
 }
 
