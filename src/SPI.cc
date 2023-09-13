@@ -1,6 +1,6 @@
 #include "arduino-mock/SPI.h"
 
-static SPIMock* p_SPIMock = NULL;
+static SPIMock* p_SPIMock = nullptr;
 SPIMock* SPIMockInstance() {
   if (!p_SPIMock) {
     p_SPIMock = new SPIMock();
@@ -11,7 +11,7 @@ SPIMock* SPIMockInstance() {
 void releaseSPIMock() {
   if (p_SPIMock) {
     delete p_SPIMock;
-    p_SPIMock = NULL;
+    p_SPIMock = nullptr;
   }
 }
 

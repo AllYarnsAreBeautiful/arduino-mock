@@ -4,7 +4,7 @@
 #define ERR 0
 #define DECODED 1
 
-static IRrecvMock* gIRrecvMock = NULL;
+static IRrecvMock* gIRrecvMock = nullptr;
 IRrecvMock* irrecvMockInstance() {
   if(!gIRrecvMock) {
     gIRrecvMock = new IRrecvMock();
@@ -15,7 +15,7 @@ IRrecvMock* irrecvMockInstance() {
 void releaseIRrecvMock() {
   if(gIRrecvMock) {
     delete gIRrecvMock;
-    gIRrecvMock = NULL;
+    gIRrecvMock = nullptr;
   }
 }
 
@@ -37,20 +37,20 @@ IRrecv_::IRrecv_(int16_t recvpin) {
 }
 
 int16_t IRrecv_::decode(decode_results *results) {
-  assert (gIRrecvMock != NULL);
+  assert (gIRrecvMock != nullptr);
   gIRrecvMock->decode(results);
-  assert (results != NULL);
+  assert (results != nullptr);
   results->value = gIRrecvMock->getIRValue();
   return DECODED;
 }
 
 void IRrecv_::enableIRIn() {
-  assert (gIRrecvMock != NULL);
+  assert (gIRrecvMock != nullptr);
   gIRrecvMock->enableIRIn();
 }
 
 void IRrecv_::resume() {
-  assert (gIRrecvMock != NULL);
+  assert (gIRrecvMock != nullptr);
   gIRrecvMock->resume();
 }
 

@@ -1,6 +1,6 @@
 #include "arduino-mock/Wire.h"
 
-static WireMock* p_WireMock = NULL;
+static WireMock* p_WireMock = nullptr;
 WireMock* WireMockInstance() {
   if (!p_WireMock) {
     p_WireMock = new WireMock();
@@ -11,7 +11,7 @@ WireMock* WireMockInstance() {
 void releaseWireMock() {
   if (p_WireMock) {
     delete p_WireMock;
-    p_WireMock = NULL;
+    p_WireMock = nullptr;
   }
 }
 

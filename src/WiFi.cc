@@ -1,6 +1,6 @@
 #include "arduino-mock/WiFi.h"
 
-static WiFiMock* p_WiFiMock = NULL;
+static WiFiMock* p_WiFiMock = nullptr;
 WiFiMock* WiFiMockInstance() {
   if (!p_WiFiMock) {
     p_WiFiMock = new WiFiMock();
@@ -11,7 +11,7 @@ WiFiMock* WiFiMockInstance() {
 void releaseWiFiMock() {
   if (p_WiFiMock) {
     delete p_WiFiMock;
-    p_WiFiMock = NULL;
+    p_WiFiMock = nullptr;
   }
 }
 

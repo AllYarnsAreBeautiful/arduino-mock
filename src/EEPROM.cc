@@ -2,7 +2,7 @@
 
 #include "arduino-mock/EEPROM.h"
 
-static EEPROMMock* p_EEPROMMock = NULL;
+static EEPROMMock* p_EEPROMMock = nullptr;
 EEPROMMock* EEPROMMockInstance() {
   if (!p_EEPROMMock) {
     p_EEPROMMock = new EEPROMMock();
@@ -11,7 +11,7 @@ EEPROMMock* EEPROMMockInstance() {
 }
 
 void releaseEEPROMMock() {
-  assert (p_EEPROMMock != NULL);
+  assert (p_EEPROMMock != nullptr);
   if (p_EEPROMMock) {
     delete p_EEPROMMock;
     p_EEPROMMock = NULL;
@@ -19,12 +19,12 @@ void releaseEEPROMMock() {
 }
 
 uint8_t EEPROM_::read(int a) {
-  assert (p_EEPROMMock != NULL);
+  assert (p_EEPROMMock != nullptr);
   return p_EEPROMMock->read(a);
 }
 
 void EEPROM_::write(int a, uint8_t b) {
-  assert (p_EEPROMMock != NULL);
+  assert (p_EEPROMMock != nullptr);
   p_EEPROMMock->write(a, b);
 }
 
