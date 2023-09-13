@@ -16,7 +16,6 @@ void releaseArduinoMock() {
 }
 
 ArduinoMock::ArduinoMock() {
-  currentMillis = 0;
 }
 
 void pinMode(uint8_t a, uint8_t b) {

@@ -50,13 +50,13 @@ template<typename T> void printBase(T num, int base) {
   std::cout << num << std::dec;
 }
 
-bool Serial_::printToCout = false;
+bool Stream::printToCout = false;
 
-void Serial_::setPrintToCout(bool flag) {
+void Stream::setPrintToCout(bool flag) {
   printToCout = flag;
 }
 
-size_t Serial_::print(const char *s) {
+size_t Stream::print(const char *s) {
   if (printToCout) {
     std::cout << s;
     return 0;
@@ -65,7 +65,7 @@ size_t Serial_::print(const char *s) {
   return gSerialMock->print(s);
 }
 
-size_t Serial_::print(char c) {
+size_t Stream::print(char c) {
   if (printToCout) {
     std::cout << c;
     return 0;
@@ -74,7 +74,7 @@ size_t Serial_::print(char c) {
   return gSerialMock->print(c);
 }
 
-size_t Serial_::print(unsigned char c, int base) {
+size_t Stream::print(unsigned char c, int base) {
   if (printToCout) {
     printBase(c, base);
     return 0;
@@ -83,7 +83,7 @@ size_t Serial_::print(unsigned char c, int base) {
   return gSerialMock->print(c, base);
 }
 
-size_t Serial_::print(int num, int base) {
+size_t Stream::print(int num, int base) {
   if (printToCout) {
     printBase(num, base);
     return 0;
@@ -92,7 +92,7 @@ size_t Serial_::print(int num, int base) {
   return gSerialMock->print(num, base);
 }
 
-size_t Serial_::print(unsigned int num, int base) {
+size_t Stream::print(unsigned int num, int base) {
   if (printToCout) {
     printBase(num, base);
     return 0;
@@ -101,7 +101,7 @@ size_t Serial_::print(unsigned int num, int base) {
   return gSerialMock->print(num, base);
 }
 
-size_t Serial_::print(long num, int base) {
+size_t Stream::print(long num, int base) {
   if (printToCout) {
     printBase(num, base);
     return 0;
@@ -110,7 +110,7 @@ size_t Serial_::print(long num, int base) {
   return gSerialMock->print(num, base);
 }
 
-size_t Serial_::print(unsigned long num, int base) {
+size_t Stream::print(unsigned long num, int base) {
   if (printToCout) {
     printBase(num, base);
     return 0;
@@ -119,7 +119,7 @@ size_t Serial_::print(unsigned long num, int base) {
   return gSerialMock->print(num, base);
 }
 
-size_t Serial_::print(double num, int digits) {
+size_t Stream::print(double num, int digits) {
   if (printToCout) {
     printDouble(num, digits);
     return 0;
@@ -128,7 +128,7 @@ size_t Serial_::print(double num, int digits) {
   return gSerialMock->print(num, digits);
 }
 
-size_t Serial_::println(const char *s) {
+size_t Stream::println(const char *s) {
   if (printToCout) {
     std::cout << s << std::endl;
     return 0;
@@ -137,7 +137,7 @@ size_t Serial_::println(const char *s) {
   return gSerialMock->println(s);
 }
 
-size_t Serial_::println(char c) {
+size_t Stream::println(char c) {
   if (printToCout) {
     std::cout << c << std::endl;
     return 0;
@@ -176,7 +176,7 @@ size_t Serial_::println(double num, int digits) {
   return gSerialMock->println(num, digits);
 }
 
-size_t Serial_::println(void) {
+size_t Stream::println(void) {
   if (printToCout) {
     std::cout << std::endl;
     return 0;
@@ -220,5 +220,15 @@ uint8_t Serial_::read() {
   return gSerialMock->read();
 }
 
+uint8_t Stream::readBytesUntil(char delimiter, char* buffer, int length) {
+  assert (gSerialMock != NULL);
+  return gSerialMock->readBytesUntil(delimiter, buffer, length);
+}
+
+Stream::operator bool() {
+  assert (gSerialMock != NULL);
+  return gSerialMock->BoolOp();
+}
+
 // Preinstantiate Objects
-Serial_ Serial;
+Stream Serial;
