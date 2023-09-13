@@ -221,12 +221,12 @@ uint8_t Serial_::read() {
 }
 
 uint8_t Stream::readBytesUntil(char delimiter, char* buffer, int length) {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->readBytesUntil(delimiter, buffer, length);
 }
 
 Stream::operator bool() {
-  assert (gSerialMock != NULL);
+  assert (gSerialMock != nullptr);
   return gSerialMock->BoolOp();
 }
 
