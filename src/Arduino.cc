@@ -16,7 +16,6 @@ void releaseArduinoMock() {
 }
 
 ArduinoMock::ArduinoMock() {
-  currentMillis = 0;
 }
 
 void pinMode(uint8_t a, uint8_t b) {
@@ -49,8 +48,7 @@ void analogWrite(uint8_t a, int b) {
 
 unsigned long millis(void) {
   assert (arduinoMock != NULL);
-  arduinoMock->millis();
-  return arduinoMock->getMillis();
+  return arduinoMock->millis();
 }
 
 unsigned long micros(void) {

@@ -77,42 +77,8 @@ void loop(void);
 #define F(x) (x)
 
 class ArduinoMock {
-  private:
-    unsigned long  currentMillis;
-
   public:
     ArduinoMock();
-
-    unsigned long getMillis() {
-      currentMillis += 1; // increment each time `millis()` is called
-      return currentMillis;
-    };
-
-    void setMillisRaw (unsigned long milliseconds) {
-      currentMillis = milliseconds;
-    };
-    void setMillisSecs(unsigned long seconds) {
-      setMillisRaw(seconds *      1000);
-    };
-    void setMillisMins(unsigned long minutes) {
-      setMillisRaw(minutes *   60 * 1000);
-    };
-    void setMillisHrs (float         hours)   {
-      setMillisRaw(hours  * 60 * 60 * 1000);
-    };
-
-    void addMillisRaw (unsigned long milliseconds) {
-      currentMillis += milliseconds;
-    };
-    void addMillisSecs(unsigned long seconds) {
-      addMillisRaw(seconds *      1000);
-    };
-    void addMillisMins(unsigned long minutes) {
-      addMillisRaw(minutes *   60 * 1000);
-    };
-    void addMillisHrs (float         hours)   {
-      addMillisRaw(hours  * 60 * 60 * 1000);
-    };
 
     MOCK_METHOD2(pinMode, void (uint8_t, uint8_t));
     MOCK_METHOD2(analogWrite, void (uint8_t, int));

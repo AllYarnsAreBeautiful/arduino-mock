@@ -39,7 +39,10 @@ class SerialMock {
     MOCK_METHOD0(available, uint8_t());
     MOCK_METHOD0(read, uint8_t());
 
+    MOCK_METHOD3(readBytesUntil, uint8_t(char, char*, int));
+
     MOCK_METHOD0(flush, void());
+    MOCK_METHOD0(BoolOp, bool());
 
     /* Not implemented yet
     MOCK_METHOD2(println, size_t(unsigned char, int));
@@ -50,7 +53,7 @@ class SerialMock {
     */
 };
 
-class Serial_ {
+class Stream {
 
   private:
     static bool printToCout;
@@ -87,7 +90,11 @@ class Serial_ {
     uint8_t available();
     uint8_t read();
 
+    uint8_t readBytesUntil(char delimiter, char* buffer, int length);
+
     static void flush();
+
+    operator bool();
 
     /*
     TODO: Not implemented yet.
@@ -101,7 +108,7 @@ class Serial_ {
     static size_t println(const Printable&);
     */
 };
-extern Serial_ Serial;
+extern Stream Serial;
 
 SerialMock* serialMockInstance();
 void releaseSerialMock();

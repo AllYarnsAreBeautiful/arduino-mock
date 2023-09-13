@@ -218,3 +218,16 @@ TEST(serial, read2) {
   EXPECT_EQ(1, Serial.read());
   releaseSerialMock();
 }
+
+TEST(serial, readBytesUntil) {
+  SerialMock* serialMock = serialMockInstance();
+  char delimiter = '\n';
+  char buffer[1];
+  int length = 1;
+  EXPECT_CALL(*serialMock, readBytesUntil(Matcher<char>(delimiter),
+                                          Matcher<char*>(buffer),
+                                          Matcher<int>(length)))
+    .WillRepeatedly(Return(1));
+  EXPECT_EQ(1, Serial.readBytesUntil(delimiter, buffer, length));
+  releaseSerialMock();
+}
