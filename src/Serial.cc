@@ -146,32 +146,32 @@ size_t Stream::println(char c) {
   return gSerialMock->println(c);
 }
 
-size_t Serial_::println(unsigned char c, int base) {
+size_t Stream::println(unsigned char c, int base) {
   assert (gSerialMock != nullptr);
   return gSerialMock->println(c, base);
 }
 
-size_t Serial_::println(int num, int base) {
+size_t Stream::println(int num, int base) {
   assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
-size_t Serial_::println(unsigned int num, int base) {
+size_t Stream::println(unsigned int num, int base) {
   assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
-size_t Serial_::println(long num, int base) {
+size_t Stream::println(long num, int base) {
   assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
-size_t Serial_::println(unsigned long num, int base) {
+size_t Stream::println(unsigned long num, int base) {
   assert (gSerialMock != nullptr);
   return gSerialMock->println(num, base);
 }
 
-size_t Serial_::println(double num, int digits) {
+size_t Stream::println(double num, int digits) {
   assert (gSerialMock != nullptr);
   return gSerialMock->println(num, digits);
 }
@@ -185,37 +185,37 @@ size_t Stream::println(void) {
   return gSerialMock->println();
 }
 
-size_t Serial_::write(uint8_t val) {
+size_t Stream::write(uint8_t val) {
   assert (gSerialMock != nullptr);
   return gSerialMock->write(val);
 }
 
-size_t Serial_::write(const char *str) {
+size_t Stream::write(const char *str) {
   assert (gSerialMock != nullptr);
   return gSerialMock->write(str);
 }
 
-size_t Serial_::write(const uint8_t *buffer, size_t size) {
+size_t Stream::write(const uint8_t *buffer, size_t size) {
   assert (gSerialMock != nullptr);
   return gSerialMock->write(buffer, size);
 }
 
-uint8_t Serial_::begin(uint32_t port) {
+uint8_t Stream::begin(uint32_t port) {
   assert (gSerialMock != nullptr);
   return gSerialMock->begin(port);
 }
 
-void Serial_::flush() {
+void Stream::flush() {
   assert (gSerialMock != nullptr);
   return gSerialMock->flush();
 }
 
-uint8_t Serial_::available() {
+uint8_t Stream::available() {
   assert (gSerialMock != nullptr);
   return gSerialMock->available();
 }
 
-uint8_t Serial_::read() {
+uint8_t Stream::read() {
   assert (gSerialMock != nullptr);
   return gSerialMock->read();
 }
