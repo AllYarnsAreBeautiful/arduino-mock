@@ -39,7 +39,7 @@ IRrecv_::IRrecv_(int16_t recvpin) {
 int16_t IRrecv_::decode(decode_results *results) {
   assert (gIRrecvMock != nullptr);
   gIRrecvMock->decode(results);
-  assert (results != NULL);
+  assert (results != nullptr);
   results->value = gIRrecvMock->getIRValue();
   return DECODED;
 }
