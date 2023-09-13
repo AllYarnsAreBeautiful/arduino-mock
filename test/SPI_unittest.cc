@@ -9,8 +9,8 @@ TEST(SPITest, access) {
   uint8_t value2 = 12;
   uint16_t value = 3;
   char text[] = "Mock test";
-  uint8_t* callback_func = NULL;
-  void* voidTest = NULL;
+  uint8_t* callback_func = nullptr;
+  void* voidTest = nullptr;
 
   SPISettings settings(1, 2, 3);
   SPIMock* mock = SPIMockInstance();
