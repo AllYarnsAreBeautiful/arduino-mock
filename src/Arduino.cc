@@ -47,7 +47,8 @@ void analogWrite(uint8_t a, int b) {
 }
 
 unsigned long millis(void) {
-  assert (arduinoMock != NULL);
+  assert (arduinoMock != NULL);  
+  currentMillis += 1; // increment each time `millis()` is called
   return arduinoMock->millis();
 }
 
