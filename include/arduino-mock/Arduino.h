@@ -77,8 +77,16 @@ void loop(void);
 #define F(x) (x)
 
 class ArduinoMock {
+  private:
+    unsigned long currentMillis;
+
   public:
     ArduinoMock();
+
+    unsigned long getMillis() {
+      currentMillis++; // increment each time `millis()` is called
+      return currentMillis;
+    };
 
     MOCK_METHOD2(pinMode, void (uint8_t, uint8_t));
     MOCK_METHOD2(analogWrite, void (uint8_t, int));
