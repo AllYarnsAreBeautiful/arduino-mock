@@ -19,6 +19,7 @@ extern "C" {
 
 #ifdef WIN32
 #elif linux
+#elif __APPLE__
 #else
 #define true 0x1
 #define false 0x0

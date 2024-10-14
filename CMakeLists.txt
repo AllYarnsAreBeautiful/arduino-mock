@@ -1,6 +1,8 @@
 cmake_minimum_required (VERSION 2.8.8)
 project (arduino_mock)
 
+set(CMAKE_CXX_STANDARD 11 CACHE STRING "Set the C++ standard to be used for compiling")
+
 find_package(Threads REQUIRED)
 add_subdirectory(lib/gtest)
 
